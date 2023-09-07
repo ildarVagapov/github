@@ -13,17 +13,14 @@ export const Home = () => {
 	const [fetchRepos, { data: repos, isLoading: loadingRepos }] = useLazyGetUserReposQuery()
 
 	useEffect(() => {
-		// setDropdown(data?.length! > 0 && debounce.length < 3)
 		setDropdown(text.length > 0)
 	}, [debounce, text])
-
-
-	// проверить почему только по data  закрыватеся
 
 	const handlerClick = (username: string) => {
 		fetchRepos(username)
 		setDropdown(false)
 	}
+
 
 	return (
 		<>
